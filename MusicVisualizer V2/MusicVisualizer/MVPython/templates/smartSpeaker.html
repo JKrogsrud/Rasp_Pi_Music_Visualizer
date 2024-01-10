@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Zach and Jared">
+		<meta name="description" content="A web controller for a Raspberry Pi based smart speaker, built by Zach and Jared">
+		<title>Smart Speaker Web Controller</title>
+		<link rel="stylesheet" href="../static/desktopStyle.css">
+		<link rel="stylesheet" href="../static/phoneStyle.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	</head>
+
+	<body>
+		<main class="grid-container">
+			<header class="grid-item">
+				<h1 id="title">Zach and Jared's Smart Speaker Controller</h1>
+				<p class="text">Hello, and thank you for choosing this smart speaker as your audio visualizer of choice! To use this product, just select an audio source and press play. 
+					<ol>
+						<li>Press "Choose File" to select a .wav file from your device.</li>
+						<li>Press "Upload" to add the audio file. A maximum of 5 audio files may be uploaded at a time.<br>
+							Press "Delete" to remove a specific audio file.</li>
+						<li>With your desired audio track selected, press play to start visualizing!</li>
+					</ol>
+				</p>
+			</header>	
+			<section id="section-file" class="grid-item">
+				<h2>Uploaded Audio</h2>
+				<div id="audio-stack">
+					<p id="defaultMessage">Uploaded Audio Will Appear Here<br>Click to Choose a File and Upload It</p>
+					<div id="audio1" style="cursor: pointer;"></div>
+					<div id="audio2" style="cursor: pointer;"></div>
+					<div id="audio3" style="cursor: pointer;"></div>
+					<div id="audio4" style="cursor: pointer;"></div>
+					<div id="audio5" style="cursor: pointer;"></div>
+				</div>
+				<form method="post" enctype="multipart/form-data">
+					<input type="file" id="input-upload" name="file-to-upload" accept=".wav,.wave">
+					<button id="upload" type="button">Upload</button>
+				</form>
+			</section>
+			<section id="section-custom" class="grid-item">
+				<h2>Customization</h2>
+				<form>
+					<select id="color">
+						<option id="red">Red</option>
+						<option id="green">Green</option>
+						<option id="blue">Blue</option>
+						<option id="yellow">Yellow</option>
+					</select>
+					<select id="visual">
+						<option id="Celestial Orbs">Celestial Orbs</option>
+						<option id="Classic Bars">Classic Bars</option>
+						<option id="Splatter">Splatter:</option>
+					</select>
+					<button id="apply" type="button">Apply</button>
+				</form>
+			</section>
+			<section id="section-controls" class="grid-item">
+				<div>
+					<button id="vol-up" class="controls" type="button"><img src="/static/plus.png" alt="volume up"></button>
+				</div>
+				<div>
+					<button id="play-pause" class="controls" type="button"><img id="play-image" src="/static/play.png" alt="play"></button>
+				</div>
+				<div>
+					<<button id="vol-down" class="controls" type="button"><img src="/static/minus.png" alt="volume down"></button>
+				</div>
+			</section>
+		</main>
+		<footer>
+				<p class="text">Web Controller Authored by: Zachary Hayes<br>Audio Visualizer Authored by: Jared Krogsrud</p>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../static/smartSpeaker.js"></script>
+	</body>
+</html>
